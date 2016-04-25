@@ -1,6 +1,7 @@
 package sk.kuzmisin.xtbgenerator;
 
 import com.google.javascript.jscomp.*;
+import com.google.javascript.jscomp.CompilerOptions.LanguageMode;
 
 import java.io.*;
 import java.util.Collection;
@@ -103,8 +104,14 @@ public class XtbGenerator {
     }
 
     public Map<String, JsMessage> getMessagesFromJs() throws IOException {
+        CompilerOptions options = new CompilerOptions();
+        options.setLanguageIn(LanguageMode.ECMASCRIPT5);
+
         final JsMessageExtractor extractor = new JsMessageExtractor(
-                new GoogleJsMessageIdGenerator(projectId), JsMessage.Style.CLOSURE
+                new GoogleJsMessageIdGenerator(projectId),
+                JsMessage.Style.CLOSURE,
+                options,
+                false
         );
 
         final Collection<JsMessage> messages = extractor.extractMessages(jsFiles);
