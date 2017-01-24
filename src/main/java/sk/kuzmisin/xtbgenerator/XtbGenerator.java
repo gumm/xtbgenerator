@@ -111,7 +111,7 @@ public class XtbGenerator {
                 new GoogleJsMessageIdGenerator(projectId),
                 JsMessage.Style.CLOSURE,
                 options,
-                false
+                true
         );
 
         final Collection<JsMessage> messages = extractor.extractMessages(jsFiles);
