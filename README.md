@@ -1,4 +1,5 @@
 # XtbGenerator
+Now with support for EcmaScript 6 and up.
 
 Generate/append XTB (translation XML file) for google closure compiler https://developers.google.com/closure/compiler/
 
