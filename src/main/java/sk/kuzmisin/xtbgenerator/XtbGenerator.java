@@ -105,7 +105,7 @@ public class XtbGenerator {
 
     public Map<String, JsMessage> getMessagesFromJs() throws IOException {
         CompilerOptions options = new CompilerOptions();
-        options.setLanguageIn(LanguageMode.ECMASCRIPT5);
+        options.setLanguageIn(LanguageMode.ECMASCRIPT_NEXT);
 
         final JsMessageExtractor extractor = new JsMessageExtractor(
                 new GoogleJsMessageIdGenerator(projectId),
